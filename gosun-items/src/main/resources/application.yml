@@ -1,0 +1,18 @@
+server:
+  port: 8001
+#spring:
+#  application:
+#    name: items
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/items?useSSL=false&characterEncoding=utf-8
+#    username: root
+#    password: 123456
+#    type: com.zaxxer.hikari.HikariDataSource
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:7001/eureka/
+#logging:
+#  level:
+#    com.gosun.shop.gosunitem.mapper: debug

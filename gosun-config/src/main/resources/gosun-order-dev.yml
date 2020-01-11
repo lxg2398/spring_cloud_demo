@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/orders?useSSL=false&characterEncoding=utf-8
+    username: '{cipher}031b3a732d7409c9919a3c34b2e28e6b55ca997b3d38ddd60af7c26b430ae337'
+    password: '{cipher}ea14d93ea58cada3322ca43959075760482c5a73f4f685875243371da99680ce'
+    type: com.zaxxer.hikari.HikariDataSource
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:7001/eureka/
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
+ribbon:
+  ReadTimeout: 30000
+  ConnectTimeout: 30000
+logging:
+  level:
+    com.gosun.shop.gosunorder.mapper: debug

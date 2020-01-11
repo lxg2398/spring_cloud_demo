@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+  xmlns:jee="http://www.springframework.org/schema/jee" xmlns:aop="http://www.springframework.org/schema/aop"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+       http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+
+	<bean id="processEngineConfiguration" class="org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration">
+		<!-- 设置数据库连接数据 -->
+		<property name="jdbcDriver" value="com.mysql.jdbc.Driver"></property>
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/test_activiti?useSSL=false"></property>
+		<property name="jdbcUsername" value="root"></property>
+		<property name="jdbcPassword" value="123"></property>
+
+		<!-- 设置创建表的策略 -->
+		<property name="databaseSchemaUpdate" value="true"></property>
+
+
+		<!--&lt;!&ndash; 邮件任务，发送邮件 &ndash;&gt;-->
+		<!--<property name="mailServerHost" value="smtp.qq.com"></property>-->
+		<!--<property name="mailServerPort" value="587"></property>-->
+		<!--&lt;!&ndash;默认发送方&ndash;&gt;-->
+		<!--<property name="mailServerDefaultFrom" value="335892083@qq.com"></property>-->
+		<!--        &lt;!&ndash;发送方登录用户名&ndash;&gt;-->
+		<!--<property name="mailServerUsername" value="335892083@qq.com"></property>-->
+		<!--&lt;!&ndash;发送方登录密码&ndash;&gt;-->
+		<!--<property name="mailServerPassword" value="lzqiang4683568"></property>-->
+		<!--&lt;!&ndash;加密方式 一定要有&ndash;&gt;-->
+		<!--<property name="mailServerUseSSL" value="true"></property>-->
+
+	</bean>
+
+</beans>

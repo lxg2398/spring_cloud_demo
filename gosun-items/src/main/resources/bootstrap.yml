@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    config:
+      discovery:
+        service-id: config
+        enabled: true
+      profile: dev
+  application:
+    name: gosun-item
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/

@@ -1,0 +1,30 @@
+server:
+  port: 6001
+
+#服务的名称
+spring:
+  application:
+    name: zuul-gateway
+
+#指定注册中心地址
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7001/eureka/
+
+#自定义路由映射
+#zuul:
+#  routes:
+#    order-service: /apigateway/order/**
+#    item-service: /apigateway/item/**
+#  #统一入口为上面的配置，其他入口忽略
+#  ignored-patterns: /*-service/**
+#  #忽略整个服务，对外提供接口
+#  ignored-services: order
+zuul:
+  routes:
+    order:
+      serviceId: gosun-order
+      path: /order/**
+#      url: http://localhost:7001/
+  ignored-services: '*'

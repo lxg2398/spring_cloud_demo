@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gosun.shop.gosunactiviti.mapper.LeaveApplicationMapper">
+  <resultMap id="BaseResultMap" type="com.gosun.shop.gosunactiviti.domain.LeaveApplication">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="process_instance_id" jdbcType="VARCHAR" property="processInstanceId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="leave_days" jdbcType="TINYINT" property="leaveDays" />
+    <result column="begin_date" jdbcType="TIMESTAMP" property="beginDate" />
+    <result column="end_date" jdbcType="TIMESTAMP" property="endDate" />
+    <result column="leave_type" jdbcType="TINYINT" property="leaveType" />
+    <result column="leave_reason" jdbcType="VARCHAR" property="leaveReason" />
+    <result column="process_status" jdbcType="TINYINT" property="processStatus" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, process_instance_id, user_id, leave_days, begin_date, end_date, leave_type, leave_reason, 
+    process_status, create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from le_leave_application
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from le_leave_application
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.gosun.shop.gosunactiviti.domain.LeaveApplication">
+    insert into le_leave_application (id, process_instance_id, user_id, 
+      leave_days, begin_date, end_date, 
+      leave_type, leave_reason, process_status, 
+      create_time, update_time)
+    values (#{id,jdbcType=VARCHAR}, #{processInstanceId,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}, 
+      #{leaveDays,jdbcType=TINYINT}, #{beginDate,jdbcType=TIMESTAMP}, #{endDate,jdbcType=TIMESTAMP}, 
+      #{leaveType,jdbcType=TINYINT}, #{leaveReason,jdbcType=VARCHAR}, #{processStatus,jdbcType=TINYINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gosun.shop.gosunactiviti.domain.LeaveApplication">
+    insert into le_leave_application
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="processInstanceId != null">
+        process_instance_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="leaveDays != null">
+        leave_days,
+      </if>
+      <if test="beginDate != null">
+        begin_date,
+      </if>
+      <if test="endDate != null">
+        end_date,
+      </if>
+      <if test="leaveType != null">
+        leave_type,
+      </if>
+      <if test="leaveReason != null">
+        leave_reason,
+      </if>
+      <if test="processStatus != null">
+        process_status,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="processInstanceId != null">
+        #{processInstanceId,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="leaveDays != null">
+        #{leaveDays,jdbcType=TINYINT},
+      </if>
+      <if test="beginDate != null">
+        #{beginDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endDate != null">
+        #{endDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="leaveType != null">
+        #{leaveType,jdbcType=TINYINT},
+      </if>
+      <if test="leaveReason != null">
+        #{leaveReason,jdbcType=VARCHAR},
+      </if>
+      <if test="processStatus != null">
+        #{processStatus,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gosun.shop.gosunactiviti.domain.LeaveApplication">
+    update le_leave_application
+    <set>
+      <if test="processInstanceId != null">
+        process_instance_id = #{processInstanceId,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="leaveDays != null">
+        leave_days = #{leaveDays,jdbcType=TINYINT},
+      </if>
+      <if test="beginDate != null">
+        begin_date = #{beginDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endDate != null">
+        end_date = #{endDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="leaveType != null">
+        leave_type = #{leaveType,jdbcType=TINYINT},
+      </if>
+      <if test="leaveReason != null">
+        leave_reason = #{leaveReason,jdbcType=VARCHAR},
+      </if>
+      <if test="processStatus != null">
+        process_status = #{processStatus,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gosun.shop.gosunactiviti.domain.LeaveApplication">
+    update le_leave_application
+    set process_instance_id = #{processInstanceId,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=INTEGER},
+      leave_days = #{leaveDays,jdbcType=TINYINT},
+      begin_date = #{beginDate,jdbcType=TIMESTAMP},
+      end_date = #{endDate,jdbcType=TIMESTAMP},
+      leave_type = #{leaveType,jdbcType=TINYINT},
+      leave_reason = #{leaveReason,jdbcType=VARCHAR},
+      process_status = #{processStatus,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

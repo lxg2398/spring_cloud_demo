@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/items?useSSL=false&characterEncoding=utf-8
+    username: '{cipher}031b3a732d7409c9919a3c34b2e28e6b55ca997b3d38ddd60af7c26b430ae337'
+    password: '{cipher}50032d56731cbe113dbc06d7cff58d6db278e2e4fc4ab51a5075879f7cd9f4f7'
+    type: com.zaxxer.hikari.HikariDataSource
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:7001/eureka/
+logging:
+  level:
+    com.gosun.shop.gosunitem.mapper: debug
