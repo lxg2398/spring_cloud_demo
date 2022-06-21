@@ -27,7 +27,7 @@
         <spring-cloud.version>Finchley.SR4</spring-cloud.version>
         <mybatis.version>2.0.1</mybatis.version>
         <mapper.mybatis.version>2.0.4</mapper.mybatis.version>
-        <mysql.version>5.1.38</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <codingapi.txlcn.version>5.0.2.RELEASE</codingapi.txlcn.version>
     </properties>
 
